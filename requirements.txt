@@ -7,4 +7,3 @@ google-generativeai
 plotly
 pydub
 pydub
-pyaudioop
