@@ -6,6 +6,5 @@ vaderSentiment
 google-generativeai
 plotly
 pydub
-ffmpeg-python
-watchdog
+pydub
 pyaudioop
