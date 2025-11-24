@@ -12,7 +12,9 @@ import streamlit as st
 import re
 import math
 from utils.rubric import RUBRIC, calculate_wpm, get_speech_rate_score, get_filler_score
-from pydub import AudioSegment
+import subprocess
+import json
+
 
 @st.cache_resource
 def load_models():
@@ -55,9 +57,20 @@ def process_local(audio_path, text_input):
     
     # 1. Transcription
     if audio_path:
-        # Calculate duration using pydub
-        audio = AudioSegment.from_file(audio_path)
-        duration_minutes = len(audio) / 60000.0 # ms to min
+        # Calculate duration using ffmpeg (pydub removed due to Python 3.13 issues)
+        try:
+            cmd = [
+                "ffprobe", 
+                "-v", "error", 
+                "-show_entries", "format=duration", 
+                "-of", "default=noprint_wrappers=1:nokey=1", 
+                audio_path
+            ]
+            duration_str = subprocess.check_output(cmd).decode().strip()
+            duration_minutes = float(duration_str) / 60.0
+        except Exception as e:
+            print(f"Error calculating duration: {e}")
+            duration_minutes = 0
         
         # Transcribe
         result = whisper_model.transcribe(audio_path)

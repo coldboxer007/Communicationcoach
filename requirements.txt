@@ -5,5 +5,4 @@ language-tool-python
 vaderSentiment
 google-generativeai
 plotly
-pydub
-pydub
+
