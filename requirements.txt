@@ -8,3 +8,4 @@ plotly
 pydub
 ffmpeg-python
 watchdog
+pyaudioop
