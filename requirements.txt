@@ -1,0 +1,10 @@
+streamlit
+openai-whisper
+sentence-transformers
+language-tool-python
+vaderSentiment
+google-generativeai
+plotly
+pydub
+ffmpeg-python
+watchdog
