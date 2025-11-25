@@ -8,7 +8,7 @@
 The app features two distinct scoring engines to balance accuracy, privacy, and accessibility:
 
 1.  **Gemini AI (Cloud Mode)**
-    *   **Powered by**: Google Gemini 1.5 Flash.
+    *   **Powered by**: Google Gemini Flash Lite model.
     *   **Capabilities**: Deep semantic understanding, flow analysis, and nuanced grammar checking.
     *   **Best for**: High-accuracy feedback and logical structure evaluation.
 
